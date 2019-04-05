@@ -11,7 +11,7 @@ const char* windowName = "edge_Canny";
 int lowerThreshold = 0;
 const int max_lowerThreshold = 100;
 const int kernerSize = 5;
-static const int ratioThreshold = 3;
+static int ratioThreshold = 3;
 const Size ksize = Size(kernerSize, kernerSize);
 static void CannyThreshold(int, void*) {
 	double sigma = 0.3*((kernerSize - 1)*0.5 - 1) + 0.8;
@@ -29,6 +29,7 @@ int main(int argc, char* arr[]) {
 	dst.create(src.size(), src.type());
 	namedWindow(windowName);
 	createTrackbar("MinThreshold", windowName, &lowerThreshold, max_lowerThreshold, CannyThreshold, 0);
+	createTrackbar("MinThreshold", windowName, &ratioThreshold, 3, CannyThreshold, 0);
 	CannyThreshold(0, 0);
 	waitKey();
 	return 0;

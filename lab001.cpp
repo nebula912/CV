@@ -1,8 +1,9 @@
 #include<iostream>
 #include<opencv2/core/core.hpp>
-#include<opencv.hpp>
+#include<opencv2/opencv.hpp>
 #include<opencv2/highgui/highgui.hpp>
 #include<math.h>
+
 //using namespace std;
 #define BINARY_PARAMETER 128
 #define LOG_PARAMETER 1

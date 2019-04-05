@@ -87,7 +87,7 @@ Mat GetIDFTImage(Mat& src) {
 	Mat Re = planes[0];
 	return Re;
 }
-Mat IdealHPfilter(Mat& src,double d0=20) {
+Mat IdealHPfilter(Mat& src,double d0=20.0) {
 	CV_Assert(src.channels() == 2);
 	Mat planes[2];
 	Mat imgDFT;
@@ -113,7 +113,7 @@ Mat IdealHPfilter(Mat& src,double d0=20) {
 	return imgDFT;
 
 }
-Mat IdealLPfilter(Mat& src,double d0=20) {
+Mat IdealLPfilter(Mat& src,double d0=20.0) {
     CV_Assert(src.channels() == 2);
 	Mat planes[2];
 	Mat imgDFT;
@@ -138,7 +138,7 @@ Mat IdealLPfilter(Mat& src,double d0=20) {
 	merge(planes, 2, imgDFT);
 	return imgDFT;
 }
-Mat BWLPfilter(Mat& src, double d0 = 10, int n = 1) {
+Mat BWLPfilter(Mat& src, double d0 = 10.0, int n = 1) {
 	CV_Assert(src.channels() == 2);
 	Mat planes[2];
 	Mat imgDFT;
@@ -161,7 +161,7 @@ Mat BWLPfilter(Mat& src, double d0 = 10, int n = 1) {
 	merge(planes, 2, imgDFT);
 	return imgDFT;
 }
-Mat BWHPfilter(Mat& src, double d0 = 10, int n = 1) {
+Mat BWHPfilter(Mat& src, double d0 = 10.0, int n = 1) {
 	CV_Assert(src.channels() == 2);
 	Mat planes[2];
 	Mat imgDFT;
